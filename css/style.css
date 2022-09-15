@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+/*-------------------------
+  初期値
+-------------------------*/
+:root {
+  --key-color: #8e44ad;
+  --sub-color: #7e349d;
+}
+
+body {
+  padding-top: 64px;
+  /* ページ内リンクのアニメーションスムーズを追加 */
+  scroll-behavior: smooth;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    padding-top: 56px;
+  }
+}
+
+ul {
+  padding-left: 0;
+  list-style-type: none;
+}
+
+/*-------------------------
+  トップ
+-------------------------*/
+.topics p {
+  text-align: justify;
+  display: -webkit-box; /* display: box;だと反映されない → ベンダープリフィックス（接頭辞）で対応 */
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 7;
+  overflow: hidden;
+}
+
+.btn-primary {
+  background-color: var(--key-color);
+  border: 1px solid var(--key-color);
+}
+
+.btn-primary:hover {
+  background-color: var(--sub-color);
+  border: 1px solid var(--sub-color);
+}
+
+footer a {
+  color: var(--key-color);
+}
+
+footer a:hover {
+  color: var(--sub-color);
+}
+
+
+.topics .col-lg-4 {
+  /* メニューで隠れないようにスクロール時の位置を変更 */
+  scroll-margin-top: 50vw;
+}
